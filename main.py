@@ -87,7 +87,9 @@ class LoginCliente(BaseModel):
 
 app = FastAPI(title="Gym Forza API")
 
-
+@app.get("/")
+def inicio():
+    return {"mensaje": "API de Gym Forza funcionando"}
 
 @app.post("/clientes", status_code=201)
 def registrar_cliente(
